@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerArmController : MonoBehaviour {
     private float t=0;
     private bool hit = false;
+    private Transform ArmLocate;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        ArmLocate = GameObject.Find("ArmPosition").transform;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,15 +24,17 @@ public class PlayerArmController : MonoBehaviour {
         if(hit==true)
         {
             t += Time.deltaTime;
-            if(t<=1)
+            if(t<=0.4)
                 gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 1f);
-            if (t >= 1 && t < 2)
+            if (t >= 0.4 )
             {
                 gameObject.transform.Translate(Vector3.back * Time.deltaTime * 1f);
             }
-            if (t >= 2)
+            if (t >= 0.8)
                 {
-                    hit = false;
+                gameObject.transform.position = ArmLocate.transform.position;
+
+                hit = false;
                     t = 0;
                 }
          }
