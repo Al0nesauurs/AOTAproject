@@ -16,6 +16,7 @@ public class PlayerArmController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            
             Debug.Log("Hit!");
             hit = true;
         //    gameObject.transform.Translate(Vector3.back * Time.deltaTime * 10f);
@@ -24,10 +25,14 @@ public class PlayerArmController : MonoBehaviour {
         if(hit==true)
         {
             t += Time.deltaTime;
-            if(t<=0.4)
+            if (t <= 0.4)
+            {
+                MeleeSystem.clicked = true;
                 gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 1f);
+            }
             if (t >= 0.4 )
             {
+                MeleeSystem.clicked = false;
                 gameObject.transform.Translate(Vector3.back * Time.deltaTime * 1f);
             }
             if (t >= 0.8)

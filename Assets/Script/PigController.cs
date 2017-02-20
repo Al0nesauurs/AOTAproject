@@ -3,42 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PigController : MonoBehaviour {
-    GameObject playerarm;
+    Transform playerarm;
     float trun = 0;
-    int hp = 10;
+    private float hp = 6;
+    public static float damageApply = 0;
     bool see = false;
     bool running = false;
 	// Use this for initialization
 	void Start () {
-        playerarm = GameObject.Find("PlayerArm");
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(hp<=0)
-        {
-            Destroy(gameObject);
-        }
+        playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
+
+    }
+
+    // Update is called once per frame
+    void Update () {
+
         if (running)
             run();
 
-	}
-    void OnTriggerEnter (Collider other)
-    {
-        if(other==playerarm.GetComponent<Collider>())
-        {
-            hp -= 3;
-            running = true;
-        }
-        
-    }
 
+	}
+
+    public void HpController(int damage)
+    {
+        Debug.Log("HP CON!");
+        running = true;
+        hp -= damage;
+        if (hp <= 0)
+            Destroy(gameObject);
+    }
     void run()
     {
-
+        var targetPosition = playerarm.position;
+        targetPosition.y = transform.position.y;
         if (!see&&trun<10)
         {
-            gameObject.transform.LookAt(playerarm.transform.position);
+            gameObject.transform.LookAt(targetPosition);
             gameObject.transform.Rotate(0, 0, 0);
             see = true;
             trun++;
