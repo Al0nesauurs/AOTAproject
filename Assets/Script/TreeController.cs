@@ -5,24 +5,27 @@ using UnityEngine;
 public class TreeController : MonoBehaviour {
     private GameObject PlayerArm;
     private int Delete = 0;
-    private float hp = 5;
 
 	// Use this for initialization
 	void Start () {
+        PlayerArm = GameObject.Find("PlayerArm");
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    	
 	}
-
-
-    public void HpController(int damage)
+    void OnTriggerEnter (Collider other)
     {
 
-        hp -= damage;
-        if (hp <= 0)
-            Destroy(gameObject);
+        if(other==PlayerArm.GetComponent<Collider>())
+        {
+            //PlayerController.reacable = true;
+            Delete++;
+            Debug.Log("Tree ="+Delete);
+            if (Delete > 2)
+                Destroy(gameObject);
+        }
     }
 
 }

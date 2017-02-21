@@ -5,18 +5,15 @@ using UnityEngine;
 public class PlayerArmController : MonoBehaviour {
     private float t=0;
     private bool hit = false;
-    private Transform ArmLocate;
 	// Use this for initialization
 	void Start () {
-        ArmLocate = GameObject.Find("ArmPosition").transform;
-
-    }
+		
+	}
 	
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            
             Debug.Log("Hit!");
             hit = true;
         //    gameObject.transform.Translate(Vector3.back * Time.deltaTime * 10f);
@@ -25,21 +22,15 @@ public class PlayerArmController : MonoBehaviour {
         if(hit==true)
         {
             t += Time.deltaTime;
-            if (t <= 0.4)
-            {
-                MeleeSystem.clicked = true;
+            if(t<=1)
                 gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 1f);
-            }
-            if (t >= 0.4 )
+            if (t >= 1 && t < 2)
             {
-                MeleeSystem.clicked = false;
                 gameObject.transform.Translate(Vector3.back * Time.deltaTime * 1f);
             }
-            if (t >= 0.8)
+            if (t >= 2)
                 {
-                gameObject.transform.position = ArmLocate.transform.position;
-
-                hit = false;
+                    hit = false;
                     t = 0;
                 }
          }
