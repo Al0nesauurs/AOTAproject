@@ -20,8 +20,8 @@ public class PigController : MonoBehaviour {
 
         if (running)
         {
-            if(fliping)
-                flip();
+          //  if(fliping)
+                //flip();
             run(trun += Time.deltaTime);
 
         }
@@ -46,15 +46,19 @@ public class PigController : MonoBehaviour {
             running = false;
             trun = 0;
         }
+        var targetPosition = playerarm.position;
+        targetPosition.y = transform.position.y;
+        gameObject.transform.LookAt(targetPosition);
+        gameObject.transform.Rotate(0, 180, 0);
         gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 0.5f);
 
     }
 
-    void flip()
+ /*   void flip()
     {
         var targetPosition = playerarm.position;
         targetPosition.y = transform.position.y;
-       targetPosition.z = 0;
+        targetPosition.z = 0;
         targetPosition.x = 0;
         if (fliping)
         {
@@ -62,5 +66,5 @@ public class PigController : MonoBehaviour {
             gameObject.transform.Rotate(0, 180, 0);
             fliping = false;
         }
-    }
+    }*/
 }

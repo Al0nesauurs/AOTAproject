@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour {
                 CanJump = true;
             }
         }
+        
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
     }
 }
