@@ -9,6 +9,7 @@ public class PigController : MonoBehaviour {
     public static float damageApply = 0;
     bool running = false;
     bool fliping = false;
+    float randomtime;
 	// Use this for initialization
 	void Start () {
         playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
@@ -26,6 +27,17 @@ public class PigController : MonoBehaviour {
 
         }
 
+        else
+        {
+            if (!fliping)
+            {
+                Vector2 wayPoint = Random.insideUnitCircle * 10; Debug.Log(wayPoint);
+                wayPoint.y = gameObject.transform.position.y ;
+                gameObject.transform.LookAt(wayPoint);
+                flip();
+            }
+            gameObject.transform.Translate(Vector3.forward * 0.01f);
+        }
 
 	}
 
@@ -54,17 +66,19 @@ public class PigController : MonoBehaviour {
 
     }
 
- /*   void flip()
+    void flip()
     {
-        var targetPosition = playerarm.position;
-        targetPosition.y = transform.position.y;
-        targetPosition.z = 0;
-        targetPosition.x = 0;
-        if (fliping)
-        {
-            gameObject.transform.LookAt(targetPosition);
-            gameObject.transform.Rotate(0, 180, 0);
-            fliping = false;
-        }
-    }*/
+        /*  var targetPosition = playerarm.position;
+          targetPosition.y = transform.position.y;
+          targetPosition.z = 0;
+          targetPosition.x = 0;
+          if (fliping)
+          {
+              gameObject.transform.LookAt(targetPosition);
+              gameObject.transform.Rotate(0, 180, 0);
+              fliping = false;
+          }
+          */
+        fliping = true;
+    }
 }
