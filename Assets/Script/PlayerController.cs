@@ -7,7 +7,8 @@ public class PlayerController : MonoBehaviour {
     private bool CanJump = true;
     static public bool reacable = false;
     public float force = 5;
-    public float MouseSpeed = 1;
+    public float jumpforce = 0;
+    public float MouseSpeed = 3;
 	// Use this for initialization
 	void Start () {
 		
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour {
 
         if(Input.GetKeyDown(KeyCode.Space)&&CanJump)
         {
-            gameObject.transform.Translate(Vector3.up * Time.deltaTime * 1f*force);
+            gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 200));
+           // gameObject.transform.Translate(Vector3.up * Time.deltaTime * 1f*force);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
