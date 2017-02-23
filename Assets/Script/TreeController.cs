@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class TreeController : MonoBehaviour {
-    private GameObject PlayerArm;
     private int Delete = 0;
     private float hp = 5;
 
@@ -13,8 +12,9 @@ public class TreeController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    	
-	}
+
+
+    }
 
 
     public void HpController(int damage)

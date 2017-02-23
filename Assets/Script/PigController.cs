@@ -9,23 +9,49 @@ public class PigController : MonoBehaviour {
     public static float damageApply = 0;
     bool running = false;
     bool fliping = false;
+    float TimetoWalk = -10;
+   
 	// Use this for initialization
 	void Start () {
         playerarm = GameObject.Find("PlayerArm").GetComponent<Transform>();
-
     }
 
     // Update is called once per frame
     void Update () {
-
         if (running)
         {
-            if(fliping)
-                flip();
+            //  if(fliping)
+            //flip();
             run(trun += Time.deltaTime);
 
         }
 
+        else
+        {
+            if (TimetoWalk<=0)
+            {
+                if (!fliping)
+                {
+                    Vector3 wayPoint = Random.insideUnitCircle * 10; Debug.Log(wayPoint);
+                    wayPoint.y = gameObject.transform.position.y;
+                    gameObject.transform.LookAt(wayPoint);
+                    fliping = true;
+                }
+
+
+                gameObject.transform.Translate(Vector3.forward * 0.01f);
+                TimetoWalk -= Time.deltaTime;
+                if (TimetoWalk <= -5)
+                {
+                    fliping = false;
+                    TimetoWalk = Random.Range(10, 15);
+                }
+            }
+            else
+            {
+               TimetoWalk -= Time.deltaTime;
+            }
+        }
 
 	}
 
@@ -34,6 +60,7 @@ public class PigController : MonoBehaviour {
         Debug.Log("HP CON!");
         running = true;
         fliping = true;
+        gameObject.transform.Translate(Vector3.up * Time.deltaTime * 10f);
         hp -= damage;
         if (hp <= 0)
             Destroy(gameObject);
@@ -46,21 +73,13 @@ public class PigController : MonoBehaviour {
             running = false;
             trun = 0;
         }
+        var targetPosition = playerarm.position;
+        targetPosition.y = transform.position.y;
+        gameObject.transform.LookAt(targetPosition);
+        gameObject.transform.Rotate(0, 180, 0);
         gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 0.5f);
 
     }
 
-    void flip()
-    {
-        var targetPosition = playerarm.position;
-        targetPosition.y = transform.position.y;
-       targetPosition.z = 0;
-        targetPosition.x = 0;
-        if (fliping)
-        {
-            gameObject.transform.LookAt(targetPosition);
-            gameObject.transform.Rotate(0, 180, 0);
-            fliping = false;
-        }
-    }
+
 }

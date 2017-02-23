@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MeleeSystem : MonoBehaviour {
     public static bool clicked = false;
-    public PigController  Pigscript;
-    public TreeController Treescript;
+    private PigController  Pigscript;
+    private TreeController Treescript;
     public static int power = 5;
     // Use this for initialization
     private GameObject target;

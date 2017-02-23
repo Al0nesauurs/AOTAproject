@@ -7,29 +7,55 @@ Direct3D:
     VRAM:     978 MB
     Driver:   9.18.13.1090
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.041 seconds
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\Advanture of the ancient\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.038 seconds
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\KID\Desktop\All computer\mygit\myUnity\fix\Advanture of the ancient_Data\Managed\System.dll (this message is harmless)
 desktop: 1440x900 60Hz; virtual: 1440x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
+UnloadTime: 2.189129 ms
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 1998 -> priority: 1 
 The referenced script on this Behaviour (Game Object 'Main Camera') is missing!
  
 (Filename:  Line: 1754)
 
-UnloadTime: 1.357602 ms
-Setting up 1 worker threads for Enlighten.
-  Thread -> id: 668 -> priority: 1 
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 12.222261 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 671.
+Total: 0.355720 ms (FindLiveObjects: 0.082035 ms CreateObjectMapping: 0.034908 ms MarkObjects: 0.225859 ms  DeleteObjects: 0.012218 ms)
+
+(-2.6, -9.6, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(-2.7, 8.9, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(-3.2, 5.3, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(4.6, -6.4, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+(5.9, -0.4, 0.0)
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
