@@ -6,17 +6,20 @@ public class PlayerController : MonoBehaviour {
     private bool CanWalk = true;
     private bool CanJump = true;
     static public bool reacable = false;
+    private bool usingitem = false;
     public float force = 5;
     public float jumpforce = 0;
     public float MouseSpeed = 3;
+    private float distToGround;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        distToGround = gameObject.GetComponent<Collider>().bounds.extents.y;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         //Mouse rotate control
+        CanJump = IsGrounded();
         float mouseInput = Input.GetAxis("Mouse X");
         Vector3 lookhere = new Vector3(0, mouseInput, 0);
         transform.Rotate(lookhere);
@@ -34,20 +37,21 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Space)&&CanJump)
         {
             gameObject.GetComponent<Rigidbody>().AddForce(new Vector2(0, 200));
-           // gameObject.transform.Translate(Vector3.up * Time.deltaTime * 1f*force);
         }
 
         if (Input.GetKeyDown(KeyCode.I))
         {
-            if(CanWalk&&CanJump)
+            if(usingitem==false)
             {
                 CanWalk = false;
                 CanJump = false;
+                usingitem = true;
             }
-            else if(!CanWalk&&!CanJump)
+            else if(usingitem==true)
             {
                 CanWalk = true;
                 CanJump = true;
+                usingitem = false;
             }
         }
         
@@ -57,4 +61,7 @@ public class PlayerController : MonoBehaviour {
         }
 
     }
+    bool IsGrounded(){
+   return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+ }
 }

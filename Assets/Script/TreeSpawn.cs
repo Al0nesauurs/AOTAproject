@@ -14,8 +14,8 @@ public class TreeSpawn : MonoBehaviour {
         if (GameObject.FindGameObjectsWithTag("TreeTag").Length < 5)
         {
             Vector3 position = new Vector3(Random.Range(-7f, 8.5f), 5, Random.Range(0, 10f));
-            var myNewtree = Instantiate(Treemodel, position, Quaternion.identity);
-            myNewtree.transform.parent = gameObject.transform;
+            var myNew= Instantiate(Treemodel, position, Quaternion.identity);
+            myNew.transform.parent = gameObject.transform;
         }
     }
 }

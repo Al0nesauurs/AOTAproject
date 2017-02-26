@@ -10,6 +10,7 @@ public class PigController : MonoBehaviour {
     bool running = false;
     bool fliping = false;
     float TimetoWalk = -10;
+    public GameObject meat;
    
 	// Use this for initialization
 	void Start () {
@@ -20,12 +21,8 @@ public class PigController : MonoBehaviour {
     void Update () {
         if (running)
         {
-            //  if(fliping)
-            //flip();
             run(trun += Time.deltaTime);
-
         }
-
         else
         {
             if (TimetoWalk<=0)
@@ -62,8 +59,14 @@ public class PigController : MonoBehaviour {
         fliping = true;
         gameObject.transform.Translate(Vector3.up * Time.deltaTime * 10f);
         hp -= damage;
+
         if (hp <= 0)
+        {
+            DropItem();
+            DropItem();
+            DropItem();
             Destroy(gameObject);
+        }
     }
     void run(float timerun)
     {
@@ -80,6 +83,10 @@ public class PigController : MonoBehaviour {
         gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 0.5f);
 
     }
-
-
+    void DropItem ()
+    {
+        Vector3 meatposition = new Vector3(Random.Range(gameObject.transform.position.x+0.3f, gameObject.transform.position.x -0.3f), gameObject.transform.position.y, gameObject.transform.position.z);
+        Instantiate(meat, meatposition, Quaternion.identity);
+    }
+        
 }
