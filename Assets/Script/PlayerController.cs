@@ -5,10 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     private bool CanWalk = true;
     private bool CanJump = true;
-    static public bool reacable = false;
     private bool usingitem = false;
     public float force = 5;
-    public float jumpforce = 0;
     public float MouseSpeed = 3;
     private float distToGround;
 	// Use this for initialization
