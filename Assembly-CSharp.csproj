@@ -47,6 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\GroundScript.cs" />
+     <Compile Include="Assets\Inventory.cs" />
+     <Compile Include="Assets\Item.cs" />
+     <Compile Include="Assets\ItemDatabase.cs" />
      <Compile Include="Assets\PlayerItemScript.cs" />
      <Compile Include="Assets\Scene\Menu_Button.cs" />
      <Compile Include="Assets\Script\GameTime.cs" />
