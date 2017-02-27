@@ -31,7 +31,6 @@ public class PigController : MonoBehaviour {
                 if (!fliping)
                 {
                     Vector3 wayPoint = Random.insideUnitCircle * 100;
-                    Debug.Log(wayPoint);
                     wayPoint.y = gameObject.transform.position.y;
                     gameObject.transform.LookAt(wayPoint);
                     fliping = true;
