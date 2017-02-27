@@ -21,7 +21,6 @@ public class ItemController : MonoBehaviour
     }
     public void HpController(int damage)
     {
-        Debug.Log("Hit item");
         hp -= damage;
         if (hp <= 0)
             Destroy(gameObject);

@@ -16,11 +16,8 @@ public class PlayerArmController : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            
             Debug.Log("Hit!");
             hit = true;
-        //    gameObject.transform.Translate(Vector3.back * Time.deltaTime * 10f);
-
         }
         if(hit==true)
         {
@@ -36,12 +33,11 @@ public class PlayerArmController : MonoBehaviour {
                 gameObject.transform.Translate(Vector3.back * Time.deltaTime * 1f);
             }
             if (t >= 0.8)
-                {
+            {
                 gameObject.transform.position = ArmLocate.transform.position;
-
                 hit = false;
-                    t = 0;
-                }
+                t = 0;
+            }
          }
 
 
