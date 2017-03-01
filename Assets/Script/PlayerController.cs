@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     private float distToGround;
 	// Use this for initialization
 	void Start () {
+
         distToGround = gameObject.GetComponent<Collider>().bounds.extents.y;
     }
 	

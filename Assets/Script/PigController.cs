@@ -10,6 +10,7 @@ public class PigController : MonoBehaviour {
     bool running = false;
     bool fliping = false;
     float TimetoWalk = -10;
+    public float speedup = 0;
     public GameObject meat;
     public float pigspeed = 0.01f;
    
@@ -30,8 +31,7 @@ public class PigController : MonoBehaviour {
             {
                 if (!fliping)
                 {
-                    Vector3 wayPoint = Random.insideUnitCircle * 100;
-                    wayPoint.y = gameObject.transform.position.y;
+                    Vector3 wayPoint = new Vector3(Random.Range(-100, 100), gameObject.transform.position.y, Random.Range(-100,100));
                     gameObject.transform.LookAt(wayPoint);
                     fliping = true;
                 }
@@ -47,7 +47,7 @@ public class PigController : MonoBehaviour {
             }
             else
             {
-               TimetoWalk -= Time.deltaTime;
+               TimetoWalk -= Time.deltaTime+speedup;
             }
         }
 

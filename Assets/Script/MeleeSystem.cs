@@ -6,7 +6,6 @@ public class MeleeSystem : MonoBehaviour {
     public static bool clicked = false;
     private PigController  Pigscript;
     private TreeController Treescript;
-    private ItemController Itemscript;
     private StoneController Stonescript;
     public static int power = 5;
     // Use this for initialization
@@ -27,6 +26,8 @@ public class MeleeSystem : MonoBehaviour {
             target = other.gameObject;
             ApplyDamage(target);
             Debug.Log(target);
+            clicked = false;
+        
         }
     }
 
@@ -52,10 +53,6 @@ public class MeleeSystem : MonoBehaviour {
             Stonescript = (StoneController)other.GetComponent(typeof(StoneController));
             Stonescript.HpController(power);
         }
-        if (other.tag == "ItemTag")
-        {
-            Itemscript = (ItemController)other.GetComponent(typeof(ItemController));
-            Itemscript.HpController(power);
-        }
+
     }
 }
