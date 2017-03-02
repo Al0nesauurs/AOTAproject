@@ -27,4 +27,9 @@ public class Item {
         itemSpeed = speed;
         itemType = type;
     }
+    
+    public Item()
+    {
+
+    }
 }

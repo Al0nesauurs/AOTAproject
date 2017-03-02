@@ -41,12 +41,13 @@ public class PlayerArmController : MonoBehaviour {
         if(hit==true)
         {
             t += Time.deltaTime;
-            if(t<=0.05)
-            MeleeSystem.clicked = true;
+            if(t<=0.1f)
+                MeleeSystem.clicked = true;
 
             if (t <= 0.4)
             {
-                gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 1f);
+
+                    gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 1f);
             }
             if (t >= 0.4 )
             {
